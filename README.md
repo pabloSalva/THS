@@ -1,1 +1,1 @@
-# THS
+# Tu Hogar Sustentable (THS)
