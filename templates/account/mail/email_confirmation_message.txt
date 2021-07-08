@@ -1,0 +1,14 @@
+{% load account %}
+{% user_display user as user_display %}
+{% load i18n %}
+{% autoescape off %}
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
+Muchas Gracias por ingresar a CheapHeat
+
+!Estas recibiendo este correo porque el usuario {{ user_display }} ha dado el tuyo como dirección de correo electrónico para conectar su cuenta via API.
+
+para confirmar la validez de este usuario por favor presione en 
+ {{ activate_url }}
+{% endblocktrans %}{% endautoescape %}
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}Gracias
+{% endblocktrans %}

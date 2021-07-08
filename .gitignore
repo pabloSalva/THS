@@ -1,0 +1,6 @@
+db.sqlite3
+.vscode
+api_artefactos/__pycache__
+api_entidades/__pycache__
+api_cheap_heat/__pycache__
+.env

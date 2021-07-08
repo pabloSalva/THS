@@ -1,0 +1,4 @@
+{% load i18n %}
+{% autoescape off %}
+{% blocktrans %}Por favor confirme su cuenta de mail para la aplicación CheapHeat{% endblocktrans %}
+{% endautoescape %}
