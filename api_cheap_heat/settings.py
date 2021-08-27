@@ -42,15 +42,23 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+
+    # apps
+
     'api_artefactos',
     'api_entidades',
     'api_login',
+    'authentication',
+    'api_inmuebles',
+
+    # validaciones
+    
     'corsheaders',
     'rest_framework.authtoken',
     'social_django',
     'oauth2_provider',
     'rest_framework_social_oauth2',
-    'authentication',
+  
     'drf_yasg',
     'rest_framework_simplejwt.token_blacklist',
 

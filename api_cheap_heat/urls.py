@@ -23,7 +23,7 @@ import api_login.urls
 # from api_artefactos.views import UserCreate
 from .views import legal
 
-
+admin.site.site_header = 'Tu Hogar Sustentable Admin'
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -45,5 +45,5 @@ urlpatterns = [
     path('rest-auth/', include('rest_auth.urls')),
     path('aut/', include(api_login.urls)),
     path('autent/', include('authentication.urls')),
-    
+
 ]
