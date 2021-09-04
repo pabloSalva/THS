@@ -1,9 +1,29 @@
 from django.db import models
+from django.utils import timezone
+
 from api_entidades.models import Localidad
 from api_artefactos.models import Artefacto
 
 
 class Inmueble(models.Model):
+    nombre = models.CharField(max_length=255)
+    cantidad_personas = models.IntegerField(default=1)
+    antiguedad = models.IntegerField()
+    localidad = models.ForeignKey(Localidad, on_delete=models.PROTECT)
+
+    def __str__(self):
+        return self.nombre
+
+
+class Material(models.Model):
+    nombre = models.CharField(max_length=255)
+    conductividad = models.FloatField(max_length=6)
+
+    def __str__(self):
+        return self.nombre
+
+
+class Etiqueta(models.Model):
     A = 0
     B = 1
     C = 2
@@ -21,22 +41,15 @@ class Inmueble(models.Model):
         (F, 'F'),
         (G, 'G'),
     )
+    etiqueta = models.IntegerField(choices=Etiqueta, default=A)
+    fecha_desde = models.DateField(null=False, default=timezone.now)
+    fecha_hasta = models.DateField(null=True, blank=True)
+    borrado = models.BooleanField(default=False)
 
-    nombre = models.CharField(max_length=255)
-    cantidad_personas = models.IntegerField(default=1)
-    antiguedad = models.IntegerField()
-    localidad = models.ForeignKey(Localidad, on_delete=models.PROTECT)
-    estiqueta = models.IntegerField(choices=Etiqueta, default=A)
-
-    def __str__(self):
-        return self.nombre
-
-class Material(models.Model):
-    nombre = models.CharField(max_length=255)
-    conductividad = models.FloatField(max_length=6)
+    inmueble = models.ForeignKey(Inmueble, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.nombre
+        return self.inmueble.nombre + self.etiqueta
 
 
 class Cerramiento(models.Model):
@@ -51,7 +64,7 @@ class Cerramiento(models.Model):
         (PUERTA, 'puerta')
     ]
 
-    NORTE ='N'
+    NORTE = 'N'
     SUR = 'S'
     ESTE = 'E'
     OESTE = 'O'
@@ -74,17 +87,20 @@ class Cerramiento(models.Model):
     superficie = models.FloatField(max_length=15)
     es_externo = models.BooleanField(default=False)
 
-    tipo = models.CharField(max_length=7, choices=TIPOS_CERRAMIENTO, default=PARED)
-    orientacion = models.CharField(max_length=8, choices=TIPO_ORIENTACION, default=NORTE)
+    tipo = models.CharField(
+        max_length=7, choices=TIPOS_CERRAMIENTO, default=PARED)
+    orientacion = models.CharField(
+        max_length=8, choices=TIPO_ORIENTACION, default=NORTE)
     material = models.ForeignKey(Material, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.denominacion
+
 
 class Ambiente(models.Model):
 
     descripcion = models.CharField(max_length=255)
     volumen = models.FloatField(max_length=15)
     clasificacion = models.CharField(max_length=255)
-    cerramiento = models.ForeignKey(Cerramiento, on_delete=models.PROTECT) 
+    cerramiento = models.ForeignKey(Cerramiento, on_delete=models.PROTECT)
     artefacto = models.ForeignKey(Artefacto, on_delete=models.PROTECT)
