@@ -2,7 +2,6 @@ from django.db import models
 from django.utils import timezone
 
 from api_entidades.models import Localidad
-from api_artefactos.models import Artefacto
 
 
 class Inmueble(models.Model):
@@ -103,4 +102,8 @@ class Ambiente(models.Model):
     volumen = models.FloatField(max_length=15)
     clasificacion = models.CharField(max_length=255)
     cerramiento = models.ForeignKey(Cerramiento, on_delete=models.PROTECT)
-    artefacto = models.ForeignKey(Artefacto, on_delete=models.PROTECT)
+    inmueble = models.ForeignKey(
+        Inmueble, on_delete=models.PROTECT)
+
+    def __str__(self):
+        return self.descripcion

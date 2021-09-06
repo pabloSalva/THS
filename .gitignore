@@ -4,5 +4,5 @@ api_artefactos/__pycache__
 api_entidades/__pycache__
 api_cheap_heat/__pycache__
 .env
-__pycache__
+__pycache__/
 api_inmuebles/__pycache__
