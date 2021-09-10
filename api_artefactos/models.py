@@ -13,17 +13,23 @@ class Artefacto(models.Model):
         (GAS, 'Gas'),
     ]
     AIRES = 0
-    LINEA_BLANCA = 1
+    HELADERAS = 1
     ELECTRONICA = 2
     ILUMINACION = 3
-    CALEFACCION = 4
+    COCINA = 4
+    LAVARROPAS = 5
+    CALEFACCION = 6
+    BAÑO = 7
 
     CATEGORIA = (
         (AIRES, 'Aires'),
-        (LINEA_BLANCA, 'Linea blanca'),
+        (HELADERAS, 'heladeras'),
         (ELECTRONICA, 'Electronica'),
         (ILUMINACION, 'Iluminación'),
-        (CALEFACCION, 'Calefacción')
+        (LAVARROPAS, 'Lavarropas'),
+        (COCINA, 'Cocina'),
+        (CALEFACCION, 'Calefacción'),
+        (BAÑO, 'Baño')
     )
 
     A = 0
@@ -54,7 +60,7 @@ class Artefacto(models.Model):
     consumo = models.IntegerField(default=0)
     calor_residual = models.FloatField(default=0.0)
     categoria = models.IntegerField(choices=CATEGORIA, default=AIRES)
-    descripcion = models.CharField(max_length=50)
+    descripcion = models.CharField(max_length=500)
     marca = models.CharField(max_length=20, default="")
     modelo = models.CharField(max_length=20, default="")
     tipo = models.CharField(max_length=2,
@@ -66,4 +72,4 @@ class Artefacto(models.Model):
 
 
 def __str__(self):
-    return "%s %s" % (self.nombre_artefacto, str(self.consumo))
+    return "%s %s" % (self.nombre, str(self.consumo))
