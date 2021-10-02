@@ -6,3 +6,9 @@ api_cheap_heat/__pycache__
 .env
 __pycache__/
 api_inmuebles/__pycache__
+api_artefactos/migrations/__pycache__/
+api_entidades/migrations/__pycache__/
+api_cheap_heat/migrations/__pycache__/
+.env
+__pycache__/
+api_inmuebles/migrations/__pycache__/
