@@ -38,18 +38,28 @@ class Tarifa(models.Model):
         "Localidad", on_delete=models.PROTECT)
     entidad = models.ForeignKey(Entidad, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.descripcion
+
 
 class Provincia(models.Model):
     nombre_provincia = models.CharField(max_length=20)
 
+    def __str__(self):
+        return self.nombre_provincia
 
 class Partido(models.Model):
     provincia = models.ForeignKey(Provincia, on_delete=models.CASCADE)
     nombre_partido = models.CharField(max_length=20)
 
+    def __str__(self):
+        return self.nombre_partido
 
 class Localidad(models.Model):
     entidad = models.ManyToManyField(Entidad, related_name='entidad')
     partido = models.ForeignKey(Partido, on_delete=models.CASCADE)
     nombre_localidad = models.CharField(max_length=20)
     zona_bioambiental = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.nombre_localidad

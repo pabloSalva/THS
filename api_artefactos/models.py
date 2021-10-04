@@ -70,6 +70,5 @@ class Artefacto(models.Model):
     users = models.ManyToManyField(User)
     ambientes = models.ManyToManyField(Ambiente, null=True, blank=True)
 
-
-def __str__(self):
-    return "%s %s" % (self.nombre, str(self.consumo))
+    def __str__(self):
+        return self.nombre

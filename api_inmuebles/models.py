@@ -48,7 +48,7 @@ class Etiqueta(models.Model):
     inmueble = models.ForeignKey(Inmueble, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.inmueble.nombre + self.etiqueta
+        return str(self.etiqueta)
 
 
 class Cerramiento(models.Model):
