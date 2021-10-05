@@ -20,6 +20,7 @@ class Artefacto(models.Model):
     LAVARROPAS = 5
     CALEFACCION = 6
     BAÑO = 7
+    AGUA = 8
 
     CATEGORIA = (
         (AIRES, 'Aires'),
@@ -29,7 +30,8 @@ class Artefacto(models.Model):
         (LAVARROPAS, 'Lavarropas'),
         (COCINA, 'Cocina'),
         (CALEFACCION, 'Calefacción'),
-        (BAÑO, 'Baño')
+        (BAÑO, 'Baño'),
+        (AGUA, 'Agua')
     )
 
     A = 0
