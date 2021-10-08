@@ -56,7 +56,7 @@ class Partido(models.Model):
         return self.nombre_partido
 
 class Localidad(models.Model):
-    entidad = models.ManyToManyField(Entidad, related_name='entidad')
+    entidad = models.ManyToManyField(Entidad, null=True, blank= True, related_name='entidad')
     partido = models.ForeignKey(Partido, on_delete=models.CASCADE)
     nombre_localidad = models.CharField(max_length=20)
     zona_bioambiental = models.CharField(max_length=20)
