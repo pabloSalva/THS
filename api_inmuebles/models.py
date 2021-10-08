@@ -51,6 +51,18 @@ class Etiqueta(models.Model):
         return str(self.etiqueta)
 
 
+class Ambiente(models.Model):
+
+    descripcion = models.CharField(max_length=255)
+    volumen = models.FloatField(max_length=15)
+    clasificacion = models.CharField(max_length=255)
+    inmueble = models.ForeignKey(
+        Inmueble, on_delete=models.PROTECT)
+
+    def __str__(self):
+        return self.descripcion
+
+
 class Cerramiento(models.Model):
     VENTANA = 'Ventana'
     TECHO = 'Techo'
@@ -91,19 +103,8 @@ class Cerramiento(models.Model):
     orientacion = models.CharField(
         max_length=8, choices=TIPO_ORIENTACION, default=NORTE)
     material = models.ForeignKey(Material, on_delete=models.PROTECT)
+    ambiente = models.ManyToManyField(
+        Ambiente, null=True, related_name='cerramiento')
 
     def __str__(self):
         return self.denominacion
-
-
-class Ambiente(models.Model):
-
-    descripcion = models.CharField(max_length=255)
-    volumen = models.FloatField(max_length=15)
-    clasificacion = models.CharField(max_length=255)
-    cerramiento = models.ForeignKey(Cerramiento, on_delete=models.PROTECT)
-    inmueble = models.ForeignKey(
-        Inmueble, on_delete=models.PROTECT)
-
-    def __str__(self):
-        return self.descripcion

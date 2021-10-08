@@ -18,7 +18,7 @@ class EntidadSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Entidad
-        fields = ['id', 'nombre_entidad', 'tipo_entidad', 'tarifas', 'tarifa']
+        fields = ['id', 'nombre_entidad', 'tipo_entidad', 'tarifa']
 
 
 class ProvinciaSerializer(serializers.ModelSerializer):
