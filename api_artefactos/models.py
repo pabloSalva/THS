@@ -34,16 +34,16 @@ class Artefacto(models.Model):
         (AGUA, 'Agua')
     )
 
-    A = 0
-    B = 1
-    C = 2
-    D = 3
-    E = 4
-    F = 5
-    G = 6
-    H = 7
-    I = 8
-    J = 9
+    A = 'A+++'
+    B = 'A++'
+    C = 'A+'
+    D = 'A'
+    E = 'B'
+    F = 'C'
+    G = 'D'
+    H = 'E'
+    I = 'F'
+    J = 'G'
 
     Etiqueta = (
         (A, 'A+++'),
@@ -57,7 +57,7 @@ class Artefacto(models.Model):
         (I, 'F'),
         (J, 'G'),
     )
-    etiqueta = models.IntegerField(choices=Etiqueta, default=A)
+    etiqueta = models.CharField(choices=Etiqueta, max_length=4, default=A)
     nombre = models.CharField(max_length=50)
     consumo = models.IntegerField(default=0)
     calor_residual = models.FloatField(default=0.0)
