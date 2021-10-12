@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf import settings
+from django.conf import settings, urls
 
 from allauth.account.views import ConfirmEmailView
 import api_login.urls
@@ -32,6 +32,7 @@ urlpatterns = [
     # End Points
     path('', include('api_artefactos.urls')),
     path('', include('api_entidades.urls')),
+    path('', include('api_inmuebles.urls')),
     #path('crearUsuario/', UserCreate.as_view(), name='crear_usuario'),
 
     # Autenticación social
