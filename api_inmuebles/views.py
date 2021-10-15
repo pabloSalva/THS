@@ -16,7 +16,8 @@ class InmuebleViewSet(viewsets.ModelViewSet):
     serializers = {
         'default': InmuebleSerializer,
         'update': InmuebleUpdateSerializer,
-        
+        'create': InmuebleUpdateSerializer,
+
     }
 
     def get_serializer_class(self):
@@ -28,7 +29,6 @@ class InmuebleViewSet(viewsets.ModelViewSet):
 
         return self.serializers.get(
             self.action, self.serializers["default"])
-
 
 
 class AmbienteViewSet(viewsets.ModelViewSet):
