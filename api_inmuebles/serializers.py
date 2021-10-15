@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from rest_framework.authtoken.models import Token
+from api_entidades.serializers import LocalidadSerializer
 
 
 #from django.contrib.auth.models import User
@@ -26,6 +27,8 @@ class MaterialSerializer(serializers.ModelSerializer):
 
 
 class InmuebleSerializer(serializers.ModelSerializer):
+    localidad = LocalidadSerializer()
+
     class Meta:
         model = Inmueble
-        fields = '__all__'
+        fields = ['nombre', 'cantidad_personas', 'antiguedad', 'localidad']
