@@ -1,7 +1,7 @@
 from rest_framework import viewsets, generics, filters
 from django_filters.rest_framework import DjangoFilterBackend
 
-from .serializers import AmbienteSerializer, InmuebleSerializer, CerramientoSerializer, MaterialSerializer
+from .serializers import AmbienteSerializer, InmuebleSerializer, CerramientoSerializer, MaterialSerializer, InmuebleUpdateSerializer
 from .models import Inmueble, Material, Cerramiento, Ambiente
 from .filters import InmuebleFilter, AmbienteFilter, CerramientoFilter, MaterialFilter
 
@@ -12,6 +12,23 @@ class InmuebleViewSet(viewsets.ModelViewSet):
     filterset_class = InmuebleFilter
     filter_backends = [filters.SearchFilter, DjangoFilterBackend]
     search_fields = ['nombre', 'consumo', 'marca']
+
+    serializers = {
+        'default': InmuebleSerializer,
+        'update': InmuebleUpdateSerializer,
+        
+    }
+
+    def get_serializer_class(self):
+        """
+        Devuelve un serializador en función del verbo HTTP.
+        Si no está definido, devuelve el serializador
+        por defecto.
+        """
+
+        return self.serializers.get(
+            self.action, self.serializers["default"])
+
 
 
 class AmbienteViewSet(viewsets.ModelViewSet):

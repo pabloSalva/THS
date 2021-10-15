@@ -33,3 +33,9 @@ class InmuebleSerializer(serializers.ModelSerializer):
         model = Inmueble
         fields = ['id', 'nombre', 'cantidad_personas',
                   'antiguedad', 'localidad']
+
+
+class InmuebleUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Inmueble
+        fields = '__all__'
