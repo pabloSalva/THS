@@ -31,4 +31,5 @@ class InmuebleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Inmueble
-        fields = ['nombre', 'cantidad_personas', 'antiguedad', 'localidad']
+        fields = ['id', 'nombre', 'cantidad_personas',
+                  'antiguedad', 'localidad']
