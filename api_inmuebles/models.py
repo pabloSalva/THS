@@ -104,7 +104,9 @@ class Cerramiento(models.Model):
         max_length=8, choices=TIPO_ORIENTACION, default=NORTE)
     material = models.ForeignKey(Material, on_delete=models.PROTECT)
     ambiente = models.ManyToManyField(
-        Ambiente, null=True, related_name='cerramiento')
+        Ambiente, blank=True, null=True, related_name='cerramiento')
+    cerramientos = models.ManyToManyField(
+        'self', blank=True, null=True, related_name='cerramientos')
 
     def __str__(self):
         return self.denominacion
