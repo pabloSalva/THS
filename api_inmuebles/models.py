@@ -95,7 +95,8 @@ class Cerramiento(models.Model):
     ]
 
     denominacion = models.CharField(max_length=255)
-    superficie = models.FloatField(max_length=15)
+    ancho=models.FloatField(max_length=15, default=0)
+    alto = models.FloatField(max_length=15, default=0)
     es_externo = models.BooleanField(default=False)
 
     tipo = models.CharField(
