@@ -11,7 +11,7 @@ class InmuebleViewSet(viewsets.ModelViewSet):
     serializer_class = InmuebleSerializer
     filterset_class = InmuebleFilter
     filter_backends = [filters.SearchFilter, DjangoFilterBackend]
-    search_fields = ['nombre', 'consumo', 'marca']
+    search_fields = ['direccion', 'consumo', 'marca']
 
     serializers = {
         'default': InmuebleSerializer,
@@ -36,7 +36,7 @@ class AmbienteViewSet(viewsets.ModelViewSet):
     serializer_class = AmbienteSerializer
     filterset_class = AmbienteFilter
     filter_backends = [filters.SearchFilter, DjangoFilterBackend]
-    search_fields = ['volumen', 'descripcion']
+    search_fields = ['volumen', 'descripcion', 'inmueble']
 
 
 class CerramientoViewSet(viewsets.ModelViewSet):
@@ -44,7 +44,7 @@ class CerramientoViewSet(viewsets.ModelViewSet):
     serializer_class = CerramientoSerializer
     filterset_class = CerramientoFilter
     filter_backends = [filters.SearchFilter, DjangoFilterBackend]
-    search_fields = ['denominacion']
+    search_fields = ['denominacion', 'ambiente']
 
 
 class MaterialViewSet(viewsets.ModelViewSet):

@@ -5,18 +5,19 @@ from api_entidades.models import Localidad
 
 
 class Inmueble(models.Model):
-    nombre = models.CharField(max_length=255)
+    direccion = models.CharField(max_length=255)
     cantidad_personas = models.IntegerField(default=1)
     antiguedad = models.IntegerField()
     localidad = models.ForeignKey(Localidad, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.nombre
+        return self.direccion
 
 
 class Material(models.Model):
     nombre = models.CharField(max_length=255)
     conductividad = models.FloatField(max_length=6)
+    es_eficiente = models.BooleanField(default=True)
 
     def __str__(self):
         return self.nombre
@@ -55,7 +56,6 @@ class Ambiente(models.Model):
 
     descripcion = models.CharField(max_length=255)
     volumen = models.FloatField(max_length=15)
-    clasificacion = models.CharField(max_length=255)
     inmueble = models.ForeignKey(
         Inmueble, on_delete=models.PROTECT)
 
@@ -95,7 +95,8 @@ class Cerramiento(models.Model):
     ]
 
     denominacion = models.CharField(max_length=255)
-    superficie = models.FloatField(max_length=15)
+    ancho=models.FloatField(max_length=15, default=0)
+    alto = models.FloatField(max_length=15, default=0)
     es_externo = models.BooleanField(default=False)
 
     tipo = models.CharField(

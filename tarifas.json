@@ -1,0 +1,285 @@
+[
+  {
+    "model": "api_entidades.entidad",
+    "pk": 4,
+    "fields": { "nombre_entidad": "Camuzzi", "tipo_entidad": "GS" }
+  },
+  {
+    "model": "api_entidades.entidad",
+    "pk": 5,
+    "fields": { "nombre_entidad": "Metrogas", "tipo_entidad": "GS" }
+  },
+
+  {
+    "model": "api_entidades.tarifa",
+    "pk": 14,
+    "fields": {
+      "fecha_inicio_tarifa": "2021-10-14",
+      "fecha_fin_tarifa": null,
+      "categoria": "TARIFAS R - SERVICIO RESIDENCIAL",
+      "sub_categoria": "R1",
+      "consumo_minimo": 0,
+      "consumo_maximo": 500,
+      "cargo_fijo": 276.0,
+      "precio_unitario": 11.0,
+      "descripcion": "Metrogas - R1",
+      "localidad": 1,
+      "entidad": 5
+    }
+  },
+  {
+    "model": "api_entidades.tarifa",
+    "pk": 15,
+    "fields": {
+      "fecha_inicio_tarifa": "2021-10-14",
+      "fecha_fin_tarifa": null,
+      "categoria": "TARIFAS R - SERVICIO RESIDENCIAL",
+      "sub_categoria": "R21",
+      "consumo_minimo": 501,
+      "consumo_maximo": 650,
+      "cargo_fijo": 290.0,
+      "precio_unitario": 11.0,
+      "descripcion": "Metrogas - R21",
+      "localidad": 1,
+      "entidad": 5
+    }
+  },
+  {
+    "model": "api_entidades.tarifa",
+    "pk": 16,
+    "fields": {
+      "fecha_inicio_tarifa": "2021-10-14",
+      "fecha_fin_tarifa": null,
+      "categoria": "TARIFAS R - SERVICIO RESIDENCIAL",
+      "sub_categoria": "R22",
+      "consumo_minimo": 651,
+      "consumo_maximo": 800,
+      "cargo_fijo": 332.0,
+      "precio_unitario": 12.0,
+      "descripcion": "Metrogas - R22",
+      "localidad": 1,
+      "entidad": 5
+    }
+  },
+  {
+    "model": "api_entidades.tarifa",
+    "pk": 17,
+    "fields": {
+      "fecha_inicio_tarifa": "2021-10-14",
+      "fecha_fin_tarifa": null,
+      "categoria": "TARIFAS R - SERVICIO RESIDENCIAL",
+      "sub_categoria": "R23",
+      "consumo_minimo": 801,
+      "consumo_maximo": 1000,
+      "cargo_fijo": 376.0,
+      "precio_unitario": 12.28,
+      "descripcion": "Metrogas - R23",
+      "localidad": 1,
+      "entidad": 5
+    }
+  },
+  {
+    "model": "api_entidades.tarifa",
+    "pk": 18,
+    "fields": {
+      "fecha_inicio_tarifa": "2021-10-14",
+      "fecha_fin_tarifa": null,
+      "categoria": "TARIFAS R - SERVICIO RESIDENCIAL",
+      "sub_categoria": "R31",
+      "consumo_minimo": 1001,
+      "consumo_maximo": 1250,
+      "cargo_fijo": 490.0,
+      "precio_unitario": 13.0,
+      "descripcion": "Metrogas - R31",
+      "localidad": 1,
+      "entidad": 5
+    }
+  },
+  {
+    "model": "api_entidades.tarifa",
+    "pk": 19,
+    "fields": {
+      "fecha_inicio_tarifa": "2021-10-14",
+      "fecha_fin_tarifa": null,
+      "categoria": "TARIFAS R - SERVICIO RESIDENCIAL",
+      "sub_categoria": "R32",
+      "consumo_minimo": 1251,
+      "consumo_maximo": 1500,
+      "cargo_fijo": 568.0,
+      "precio_unitario": 13.0,
+      "descripcion": "Metrogas - R32",
+      "localidad": 1,
+      "entidad": 5
+    }
+  },
+  {
+    "model": "api_entidades.tarifa",
+    "pk": 20,
+    "fields": {
+      "fecha_inicio_tarifa": "2021-10-14",
+      "fecha_fin_tarifa": null,
+      "categoria": "TARIFAS R - SERVICIO RESIDENCIAL",
+      "sub_categoria": "R33",
+      "consumo_minimo": 1501,
+      "consumo_maximo": 1800,
+      "cargo_fijo": 761.0,
+      "precio_unitario": 15.0,
+      "descripcion": "Metrogas - R33",
+      "localidad": 1,
+      "entidad": 5
+    }
+  },
+  {
+    "model": "api_entidades.tarifa",
+    "pk": 21,
+    "fields": {
+      "fecha_inicio_tarifa": "2021-10-14",
+      "fecha_fin_tarifa": null,
+      "categoria": "TARIFAS R - SERVICIO RESIDENCIAL",
+      "sub_categoria": "R34",
+      "consumo_minimo": 1801,
+      "consumo_maximo": 2500,
+      "cargo_fijo": 1232.0,
+      "precio_unitario": 15.0,
+      "descripcion": "Metrogas - R34",
+      "localidad": 1,
+      "entidad": 5
+    }
+  },
+  {
+    "model": "api_entidades.tarifa",
+    "pk": 22,
+    "fields": {
+      "fecha_inicio_tarifa": "2021-10-14",
+      "fecha_fin_tarifa": null,
+      "categoria": "TARIFAS R - SERVICIO RESIDENCIAL",
+      "sub_categoria": "R1",
+      "consumo_minimo": 0,
+      "consumo_maximo": 500,
+      "cargo_fijo": 240.27,
+      "precio_unitario": 9.68,
+      "descripcion": "Camuzzi - R1",
+      "localidad": 1,
+      "entidad": 4
+    }
+  },
+  {
+    "model": "api_entidades.tarifa",
+    "pk": 23,
+    "fields": {
+      "fecha_inicio_tarifa": "2021-10-14",
+      "fecha_fin_tarifa": null,
+      "categoria": "TARIFAS R - SERVICIO RESIDENCIAL",
+      "sub_categoria": "R21",
+      "consumo_minimo": 501,
+      "consumo_maximo": 650,
+      "cargo_fijo": 254.26,
+      "precio_unitario": 9.68,
+      "descripcion": "Camuzzi - R21",
+      "localidad": 1,
+      "entidad": 4
+    }
+  },
+  {
+    "model": "api_entidades.tarifa",
+    "pk": 24,
+    "fields": {
+      "fecha_inicio_tarifa": "2021-10-14",
+      "fecha_fin_tarifa": null,
+      "categoria": "TARIFAS R - SERVICIO RESIDENCIAL",
+      "sub_categoria": "R22",
+      "consumo_minimo": 651,
+      "consumo_maximo": 800,
+      "cargo_fijo": 291.04,
+      "precio_unitario": 9.9,
+      "descripcion": "Camuzzi - R22",
+      "localidad": 1,
+      "entidad": 4
+    }
+  },
+  {
+    "model": "api_entidades.tarifa",
+    "pk": 25,
+    "fields": {
+      "fecha_inicio_tarifa": "2021-10-14",
+      "fecha_fin_tarifa": null,
+      "categoria": "TARIFAS R - SERVICIO RESIDENCIAL",
+      "sub_categoria": "R23",
+      "consumo_minimo": 801,
+      "consumo_maximo": 1000,
+      "cargo_fijo": 329.55,
+      "precio_unitario": 9.911,
+      "descripcion": "Camuzzi - R23",
+      "localidad": 1,
+      "entidad": 4
+    }
+  },
+  {
+    "model": "api_entidades.tarifa",
+    "pk": 26,
+    "fields": {
+      "fecha_inicio_tarifa": "2021-10-14",
+      "fecha_fin_tarifa": null,
+      "categoria": "TARIFAS R - SERVICIO RESIDENCIAL",
+      "sub_categoria": "R31",
+      "consumo_minimo": 1001,
+      "consumo_maximo": 1250,
+      "cargo_fijo": 431.01,
+      "precio_unitario": 10.17,
+      "descripcion": "Camuzzi - R31",
+      "localidad": 1,
+      "entidad": 4
+    }
+  },
+  {
+    "model": "api_entidades.tarifa",
+    "pk": 27,
+    "fields": {
+      "fecha_inicio_tarifa": "2021-10-14",
+      "fecha_fin_tarifa": null,
+      "categoria": "TARIFAS R - SERVICIO RESIDENCIAL",
+      "sub_categoria": "R32",
+      "consumo_minimo": 1251,
+      "consumo_maximo": 1500,
+      "cargo_fijo": 500.95,
+      "precio_unitario": 10.17,
+      "descripcion": "Camuzzi - R32",
+      "localidad": 1,
+      "entidad": 4
+    }
+  },
+  {
+    "model": "api_entidades.tarifa",
+    "pk": 28,
+    "fields": {
+      "fecha_inicio_tarifa": "2021-10-14",
+      "fecha_fin_tarifa": null,
+      "categoria": "TARIFAS R - SERVICIO RESIDENCIAL",
+      "sub_categoria": "R33",
+      "consumo_minimo": 1501,
+      "consumo_maximo": 1800,
+      "cargo_fijo": 672.43,
+      "precio_unitario": 10.59,
+      "descripcion": "Camuzzi - R33",
+      "localidad": 1,
+      "entidad": 4
+    }
+  },
+  {
+    "model": "api_entidades.tarifa",
+    "pk": 29,
+    "fields": {
+      "fecha_inicio_tarifa": "2021-10-14",
+      "fecha_fin_tarifa": null,
+      "categoria": "TARIFAS R - SERVICIO RESIDENCIAL",
+      "sub_categoria": "R34",
+      "consumo_minimo": 1801,
+      "consumo_maximo": 2500,
+      "cargo_fijo": 1092.07,
+      "precio_unitario": 10.59,
+      "descripcion": "Camuzzi - R34",
+      "localidad": 1,
+      "entidad": 4
+    }
+  }
+]
