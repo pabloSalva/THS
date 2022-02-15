@@ -8,11 +8,11 @@ from .models import Inmueble, Material, Cerramiento, Ambiente
 
 class InmuebleFilter(filters.FilterSet):
     nombre = filters.CharFilter(
-        field_name='nombre', lookup_expr="icontains")
+        field_name='direccion', lookup_expr="icontains")
 
     class Meta:
         model = Inmueble
-        fields = ['nombre']
+        fields = ['direccion']
 
 
 class MaterialFilter(filters.FilterSet):
@@ -31,10 +31,10 @@ class CerramientoFilter(filters.FilterSet):
 
     denominacion = filters.CharFilter(
         field_name='denominacion', lookup_expr="icontains")
-
+    ambiente = filters.NumberFilter(field_name='ambiente')
     class Meta:
         model = Cerramiento
-        fields = ['denominacion']
+        fields = ['denominacion','ambiente']
 
 
 class AmbienteFilter(filters.FilterSet):
@@ -44,7 +44,8 @@ class AmbienteFilter(filters.FilterSet):
 
     descripcion = filters.CharFilter(
         field_name='descripcion', lookup_expr="icontains")
+    inmueble = filters.NumberFilter(field_name='inmueble')
 
     class Meta:
         model = Ambiente
-        fields = ['volumen', 'descripcion']
+        fields = ['volumen', 'descripcion', 'inmueble']
