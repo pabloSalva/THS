@@ -7,12 +7,15 @@ from .models import Inmueble, Material, Cerramiento, Ambiente
 
 
 class InmuebleFilter(filters.FilterSet):
-    nombre = filters.CharFilter(
+    direccion = filters.CharFilter(
         field_name='direccion', lookup_expr="icontains")
+    etiqueta = filters.NumberFilter(
+        field_name='etiqueta_set__etiqueta'
+    )
 
     class Meta:
         model = Inmueble
-        fields = ['direccion']
+        fields = ['direccion', 'etiqueta']
 
 
 class MaterialFilter(filters.FilterSet):
