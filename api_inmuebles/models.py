@@ -2,22 +2,22 @@ from django.db import models
 from django.utils import timezone
 
 from api_entidades.models import Localidad
-from api_artefactos.models import Artefacto
 
 
 class Inmueble(models.Model):
-    nombre = models.CharField(max_length=255)
+    direccion = models.CharField(max_length=255)
     cantidad_personas = models.IntegerField(default=1)
     antiguedad = models.IntegerField()
     localidad = models.ForeignKey(Localidad, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.nombre
+        return self.direccion
 
 
 class Material(models.Model):
     nombre = models.CharField(max_length=255)
     conductividad = models.FloatField(max_length=6)
+    es_eficiente = models.BooleanField(default=True)
 
     def __str__(self):
         return self.nombre
@@ -49,7 +49,18 @@ class Etiqueta(models.Model):
     inmueble = models.ForeignKey(Inmueble, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.inmueble.nombre + self.etiqueta
+        return str(self.etiqueta)
+
+
+class Ambiente(models.Model):
+
+    descripcion = models.CharField(max_length=255)
+    volumen = models.FloatField(max_length=15)
+    inmueble = models.ForeignKey(
+        Inmueble, on_delete=models.PROTECT)
+
+    def __str__(self):
+        return self.descripcion
 
 
 class Cerramiento(models.Model):
@@ -84,7 +95,8 @@ class Cerramiento(models.Model):
     ]
 
     denominacion = models.CharField(max_length=255)
-    superficie = models.FloatField(max_length=15)
+    ancho=models.FloatField(max_length=15, default=0)
+    alto = models.FloatField(max_length=15, default=0)
     es_externo = models.BooleanField(default=False)
 
     tipo = models.CharField(
@@ -92,15 +104,10 @@ class Cerramiento(models.Model):
     orientacion = models.CharField(
         max_length=8, choices=TIPO_ORIENTACION, default=NORTE)
     material = models.ForeignKey(Material, on_delete=models.PROTECT)
+    ambiente = models.ManyToManyField(
+        Ambiente, blank=True, null=True, related_name='cerramiento')
+    cerramientos = models.ManyToManyField(
+        'self', blank=True, null=True, related_name='cerramientos')
 
     def __str__(self):
         return self.denominacion
-
-
-class Ambiente(models.Model):
-
-    descripcion = models.CharField(max_length=255)
-    volumen = models.FloatField(max_length=15)
-    clasificacion = models.CharField(max_length=255)
-    cerramiento = models.ForeignKey(Cerramiento, on_delete=models.PROTECT)
-    artefacto = models.ForeignKey(Artefacto, on_delete=models.PROTECT)
